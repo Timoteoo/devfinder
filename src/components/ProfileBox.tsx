@@ -32,7 +32,7 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
             width={1000}
             height={1000}
             placeholder="blur"
-            blurDataURL="../../public/images/github-icon.png"
+            blurDataURL="/images/github-icon.png"
           />
         </div>
       </div>
