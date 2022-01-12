@@ -6,7 +6,12 @@
   font-family: monospace;
 }
 
-html,
-body {
-  background-color: #151c2e;
+@layer base {
+  * {
+    @apply transition-colors;
+  }
+
+  body {
+    @apply bg-blue-50 dark:bg-[#151c2e];
+  }
 }
