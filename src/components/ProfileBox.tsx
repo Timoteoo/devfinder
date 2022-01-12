@@ -41,7 +41,14 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
       <div className="max-w-[80%] w-full flex flex-col dark:text-white text-slate-900 px-5">
         <div className="flex justify-between items-center w-full">
           <h1 className="font-bold text-xl tracking-wider">{userData.name}</h1>
-          <p className="text-base">Joined 25 Jan 2011</p>
+          <p className="text-base">
+            Joined{" "}
+            {new Date(userData.created_at).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            })}
+          </p>
         </div>
 
         <p className="text-blue-600 text-base mt-1">@{userData.login}</p>
