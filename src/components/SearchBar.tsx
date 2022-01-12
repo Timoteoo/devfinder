@@ -1,7 +1,7 @@
 import { LabelHTMLAttributes, useRef } from "react";
 import { useSearch } from "../hooks/useSearch";
-import MagnifierIcon from "./icons/MagnifierIcon";
 import SearchButton from "./SearchButton";
+import { SearchOutline } from "@graywolfai/react-heroicons";
 
 function SearchBar(props: LabelHTMLAttributes<HTMLLabelElement>) {
   const { handleSearch } = useSearch();
@@ -13,7 +13,7 @@ function SearchBar(props: LabelHTMLAttributes<HTMLLabelElement>) {
       className={`dark:bg-blue-gray bg-white shadow-xl py-2 flex justify-between items-center 
       rounded-lg pl-6 pr-3 cursor-text ${props.className}`}
     >
-      <MagnifierIcon />
+      <SearchOutline width={30} color="#225291" />
       <input
         autoComplete="off"
         ref={searchInputRef}

@@ -99,6 +99,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@graywolfai/react-heroicons@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@graywolfai/react-heroicons/-/react-heroicons-1.3.0.tgz#1cbe6c66511a55663dccd4fa03c8adf6e3d7aa58"
+  integrity sha512-qZolgFV6EY6EqsFhqaztHMpaSoln0I6nwFISz7hpWpPjyPu3qsBLMAy80tCQ9enRSdGT4TwDIVHhwP2G6sxJyQ==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"

@@ -1,10 +1,12 @@
 import Image from "next/image";
-import GlobeIcon from "./icons/GlobeIcon";
-import LinkIcon from "./icons/LinkIcon";
-import LocationIcon from "./icons/LocationIcon";
-import WorkBagIcon from "./icons/WorkBagIcon";
 import { HTMLAttributes, useContext } from "react";
 import { SearchContext } from "../contexts/SearchContext";
+import {
+  LocationMarkerOutline,
+  GlobeAltOutline,
+  LinkOutline,
+  BriefcaseOutline,
+} from "@graywolfai/react-heroicons";
 
 function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
   const { userData } = useContext(SearchContext);
@@ -72,7 +74,7 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
 
         <div className="grid grid-cols-2 mt-8 gap-2">
           <div className="flex items-center">
-            <LocationIcon />
+            <LocationMarkerOutline width={20} />
             <p
               className={`ml-3 ${
                 userData.location ? "dark:text-gray-300 text-gray-500" : "text-gray-400"
@@ -82,7 +84,7 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
             </p>
           </div>
           <div className="flex items-center">
-            <GlobeIcon />
+            <GlobeAltOutline width={20} />
             <p
               className={`ml-3 ${
                 userData.twitter_username
@@ -94,7 +96,7 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
             </p>
           </div>
           <div className="flex items-center">
-            <LinkIcon />
+            <LinkOutline width={20} />
             <p
               className={`ml-3 ${
                 userData.blog ? "dark:text-gray-300 text-gray-500" : "text-gray-400"
@@ -104,7 +106,7 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
             </p>
           </div>
           <div className="flex items-center">
-            <WorkBagIcon />
+            <BriefcaseOutline width={20} />
             <p
               className={`ml-3 ${
                 userData.company ? "dark:text-gray-300 text-gray-500" : "text-gray-400"

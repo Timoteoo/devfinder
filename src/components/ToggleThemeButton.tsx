@@ -1,7 +1,6 @@
 import { useThemeSwitch } from "../hooks/useThemeSwitch";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import SunIcon from "./icons/SunIcon";
-import MoonIcon from "./icons/MoonIcon";
+import { SunOutline, MoonOutline } from "@graywolfai/react-heroicons";
 
 const buttonVariants: Variants = {
   hidden: {
@@ -39,7 +38,7 @@ function ToggleThemeButton() {
             exit="exit"
           >
             <p className="mr-4 text-sm tracking-widest font-bold text-slate-900">DARK</p>
-            <MoonIcon />
+            <MoonOutline color="#000000" width={20} />
           </motion.button>
         ) : (
           <motion.button
@@ -52,7 +51,7 @@ function ToggleThemeButton() {
             exit="exit"
           >
             <p className="mr-4 text-sm tracking-widest font-bold text-white">LIGHT</p>
-            <SunIcon />
+            <SunOutline color="#ffffff" width={20} />
           </motion.button>
         )}
       </AnimatePresence>
