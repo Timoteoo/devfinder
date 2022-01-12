@@ -6,3 +6,7 @@ Simple project from frontendmentor.
 - Uses framer-motion
 - Uses Tailwindcss
 - Uses heroicons (https://heroicons.dev/)
+
+## Preview:
+
+![Project preview](https://i.imgur.com/DAdpB8u.png)
