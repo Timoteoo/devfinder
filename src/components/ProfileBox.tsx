@@ -35,6 +35,7 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
             height={1000}
             placeholder="blur"
             blurDataURL="/images/github-icon.png"
+            alt="User"
           />
         </div>
       </div>
