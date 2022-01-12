@@ -10,7 +10,7 @@ function SearchBar(props: LabelHTMLAttributes<HTMLLabelElement>) {
   return (
     <label
       htmlFor="searchInput"
-      className={`bg-blue-gray py-2 flex justify-between items-center 
+      className={`dark:bg-blue-gray bg-white shadow-xl py-2 flex justify-between items-center 
       rounded-lg pl-6 pr-3 cursor-text ${props.className}`}
     >
       <MagnifierIcon />
@@ -20,7 +20,7 @@ function SearchBar(props: LabelHTMLAttributes<HTMLLabelElement>) {
         type="text"
         id="searchInput"
         placeholder="Search GitHub username..."
-        className="w-full px-6 bg-transparent outline-none text-lg text-white placeholder:text-gray-300"
+        className="w-full px-6 bg-transparent outline-none text-lg dark:text-white text-slate-900 placeholder:text-gray-300"
       />
       <SearchButton onClick={() => handleSearch(searchInputRef.current?.value ?? "")} />
     </label>

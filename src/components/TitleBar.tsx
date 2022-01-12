@@ -2,7 +2,7 @@ import ToggleThemeButton from "./ToggleThemeButton";
 
 function TitleBar() {
   return (
-    <header className="text-white flex justify-between">
+    <header className="dark:text-white text-slate-900 flex justify-between">
       <h1 className="text-2xl font-bold">devfinder</h1>
       <ToggleThemeButton />
     </header>

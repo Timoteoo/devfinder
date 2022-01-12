@@ -12,17 +12,17 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
   if (!userData)
     return (
       <div
-        className={`w-full bg-blue-gray py-10 px-6 rounded-lg flex
-      items-center justify-center mt-6`}
+        className={`w-full dark:bg-blue-gray bg-white py-10 px-6 rounded-lg flex
+      items-center justify-center mt-6 shadow-xl`}
       >
-        <h1 className="text-white text-xl">Nothing here... yet</h1>
+        <h1 className="dark:text-white text-slate-900 text-xl">Nothing here... yet</h1>
       </div>
     );
 
   return (
     <div
-      className={`w-full bg-blue-gray py-10 px-6 rounded-lg flex
-      items-center justify-between ${props.className}`}
+      className={`w-full dark:bg-blue-gray bg-white py-10 px-6 rounded-lg flex
+      items-center justify-between shadow-xl ${props.className}`}
     >
       {/* Profile image side */}
       <div className="max-w-[20%] w-full relative -top-20">
@@ -38,7 +38,7 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
       </div>
 
       {/* Profile data side */}
-      <div className="max-w-[80%] w-full flex flex-col text-white px-5">
+      <div className="max-w-[80%] w-full flex flex-col dark:text-white text-slate-900 px-5">
         <div className="flex justify-between items-center w-full">
           <h1 className="font-bold text-xl tracking-wider">{userData.name}</h1>
           <p className="text-base">Joined 25 Jan 2011</p>
@@ -48,17 +48,17 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
 
         <p className="text-gray-400 text-base mt-4">{userData.bio}</p>
 
-        <div className="bg-blueGray-800 py-4 rounded-lg mt-5 flex justify-around">
+        <div className="dark:bg-slate-800 bg-gray-100 py-4 rounded-lg mt-5 flex justify-around">
           <div>
-            <small className="text-gray-300 text-lg">Repos</small>
+            <small className="dark:text-gray-300 text-slate-900 text-lg">Repos</small>
             <p className="font-bold text-xl">{userData.public_repos}</p>
           </div>
           <div>
-            <small className="text-gray-300 text-lg">Followers</small>
+            <small className="dark:text-gray-300 text-slate-900 text-lg">Followers</small>
             <p className="font-bold text-xl">{userData.followers}</p>
           </div>
           <div>
-            <small className="text-gray-300 text-lg">Following</small>
+            <small className="dark:text-gray-300 text-slate-900 text-lg">Following</small>
             <p className="font-bold text-xl">{userData.following}</p>
           </div>
         </div>
@@ -67,7 +67,9 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
           <div className="flex items-center">
             <LocationIcon />
             <p
-              className={`ml-3 ${userData.location ? "text-gray-300" : "text-gray-400"}`}
+              className={`ml-3 ${
+                userData.location ? "dark:text-gray-300 text-gray-500" : "text-gray-400"
+              }`}
             >
               {userData.location ?? "Not available"}
             </p>
@@ -76,7 +78,9 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
             <GlobeIcon />
             <p
               className={`ml-3 ${
-                userData.twitter_username ? "text-gray-300" : "text-gray-400"
+                userData.twitter_username
+                  ? "dark:text-gray-300 text-gray-500"
+                  : "text-gray-400"
               }`}
             >
               {userData.twitter_username ?? "Not available"}
@@ -84,13 +88,21 @@ function ProfileBox(props: HTMLAttributes<HTMLDivElement>) {
           </div>
           <div className="flex items-center">
             <LinkIcon />
-            <p className={`ml-3 ${userData.blog ? "text-gray-300" : "text-gray-400"}`}>
+            <p
+              className={`ml-3 ${
+                userData.blog ? "dark:text-gray-300 text-gray-500" : "text-gray-400"
+              }`}
+            >
               {userData.blog ? userData.blog : "Not available"}
             </p>
           </div>
           <div className="flex items-center">
             <WorkBagIcon />
-            <p className={`ml-3 ${userData.company ? "text-gray-300" : "text-gray-400"}`}>
+            <p
+              className={`ml-3 ${
+                userData.company ? "dark:text-gray-300 text-gray-500" : "text-gray-400"
+              }`}
+            >
               {userData.company ?? "Not available"}
             </p>
           </div>
