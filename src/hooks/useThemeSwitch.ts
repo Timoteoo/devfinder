@@ -1,33 +1,40 @@
 import { useEffect, useState } from "react";
 
 export function useThemeSwitch() {
-  var storedTheme;
-  if (typeof window !== "undefined") storedTheme = window.localStorage.getItem("theme");
+  const [theme, setTheme] = useState("");
 
-  const [theme, setTheme] = useState(storedTheme ?? "dark");
-
-  function storeTheme(theme: string) {
-    if (theme === "light") {
-      window.localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("light");
-
-      return setTheme(theme);
-    }
-
-    window.localStorage.setItem("theme", "dark");
-    document.documentElement.classList.remove("light");
-    document.documentElement.classList.add("dark");
-
-    return setTheme(theme);
+  function changeTheme() {
+    setTheme(() => {
+      return theme === "dark" ? "light" : "dark";
+    });
   }
 
   useEffect(() => {
-    storeTheme(theme);
+    const savedTheme = window.localStorage.getItem("theme");
+
+    if (savedTheme) return setTheme(savedTheme);
+
+    // In case it's the first time the user opened the website,
+    // we set a default theme, which is dark.
+    setTheme("dark");
+  }, []);
+
+  useEffect(() => {
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      window.localStorage.setItem("theme", theme);
+    }
+
+    if (theme === "dark") {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+      window.localStorage.setItem("theme", theme);
+    }
   }, [theme]);
 
   return {
     theme,
-    setTheme,
+    changeTheme,
   };
 }
