@@ -1,10 +1,10 @@
-import ToggleThemeButton from "./ToggleThemeButton";
+import ChangeThemeButton from "./ChangeThemeButton";
 
 function TitleBar() {
   return (
-    <header className="dark:text-white text-slate-900 flex justify-between">
-      <h1 className="text-2xl font-bold">devfinder</h1>
-      <ToggleThemeButton />
+    <header className="flex justify-between">
+      <h1 className="dark:text-white text-slate-900 text-2xl font-bold">devfinder</h1>
+      <ChangeThemeButton />
     </header>
   );
 }
